@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Button, FlatList, StyleSheet, TextInput, View } from "react-native";
+import { Button, FlatList, StyleSheet, TextInput, View,Text } from "react-native";
 import GoalItem from "./components/GoalItem";
 import GoalInput from "./components/GoalInput";
 
@@ -45,6 +45,7 @@ export default function App() {
           addGoalHandler={addGoalHandler}
           close={closeModal}
         />
+        <Text style={styles.taskHeading}>Your Task today</Text>
         <View style={styles.goalsContainer}>
           <FlatList
             data={goalList}
@@ -72,6 +73,12 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 50,
     paddingHorizontal: 16,
+  },
+  taskHeading:{
+    fontSize:24,
+    marginVertical:20,
+    textAlign:"center",
+    color:"#DFF6FF"
   },
   goalsContainer: {
     flex: 5,
